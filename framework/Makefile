@@ -14,7 +14,8 @@ all: $(NAME)
 
 $(NAME): ${HEADER_FILES} ${OBJS}
 	$(LIBFT_MAKE)
-	ar rc ${NAME} ${OBJS}
+	cp $(LIBFT_LIB) $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 clean:
 	$(LIBFT_MAKE) clean
