@@ -30,6 +30,16 @@ static void	print_status(int exit_status)
 		printf("[BUSE]\n");
 }
 
+static void	ft_putstr(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	write(1, s, i);
+}
+
 // リストのテストたち実行するやつ〜
 int			launch_tests(t_unit_test **list)
 {
@@ -43,7 +53,9 @@ int			launch_tests(t_unit_test **list)
 	num_tests = 0;
 	while (tmp)
 	{
-		printf("> %s : ", tmp->name);
+		ft_putstr("    > ");
+		ft_putstr(tmp->name);
+		ft_putstr(" : ");
 		exit_status = launch_test(tmp->func);
 		print_status(exit_status);
 		if (exit_status == 0)
@@ -51,7 +63,7 @@ int			launch_tests(t_unit_test **list)
 		num_tests++;
 		tmp = tmp->next;
 	}
-	printf("%d/%d tests checked\n", checked, num_tests);
+	printf("\n%d/%d tests checked\n", checked, num_tests);
 	if (checked == num_tests)
 		return (0);
 	else
