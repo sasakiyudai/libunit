@@ -37,7 +37,7 @@ static void	ft_putstr(char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	write(1, s, i);
+	write(STDOUT, s, i);
 }
 
 // リストのテストたち実行するやつ〜
