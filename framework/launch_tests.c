@@ -40,6 +40,20 @@ static void	ft_putstr(char *s)
 	write(STDOUT, s, i);
 }
 
+static int	free_ret(t_unit_test **list, int ret)
+{
+	t_unit_test *tmp;
+
+	while (*list)
+	{
+		tmp = *list;
+		*list = (*list)->next;
+		free(tmp);
+	}
+	*list = NULL;
+	return (ret);
+}
+
 // リストのテストたち実行するやつ〜
 int			launch_tests(t_unit_test **list)
 {
@@ -65,7 +79,7 @@ int			launch_tests(t_unit_test **list)
 	}
 	printf("\n%d/%d tests checked\n", checked, num_tests);
 	if (checked == num_tests)
-		return (0);
+		return (free_ret(list, 0));
 	else
-		return (-1);
+		return (free_ret(list, -1));
 }
