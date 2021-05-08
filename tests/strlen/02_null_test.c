@@ -2,7 +2,7 @@
 #include <string.h>
 #include "../../libft/libft.h"
 
-int basic_test(void)
+int null_test(void)
 {
 if (ft_strlen("") == strlen(""))
 return(0);
