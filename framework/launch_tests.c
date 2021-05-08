@@ -1,25 +1,5 @@
 #include "libunit.h"
 
-static char	*ft_strdup(const char *s1)
-{
-	int		i;
-	char	*ret;
-
-	i = 0;
-	while (s1[i])
-		i++;
-	if (!(ret = malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		ret[i] = s1[i];
-		i++;
-	}
-	ret[i] = '\0';
-	return (ret);
-}
-
 static int	launch_test(int (*func)(void))
 {
 	pid_t	pid;
@@ -28,7 +8,7 @@ static int	launch_test(int (*func)(void))
 	pid = fork();
 	if (pid < 0)
 		exit_fatal();
-	else if (pid != 0)
+	else if (pid == 0)
 		exit(func());
 	wait(&status);
 	if (WIFEXITED(status))
@@ -40,18 +20,14 @@ static int	launch_test(int (*func)(void))
 
 static void	print_status(int exit_status)
 {
-	char *status;
-
 	if (exit_status == 0)
-		status = ft_strdup("OK");
+		printf("[OK]\n");
 	else if (exit_status == -1)
-		status = ft_strdup("KO");
+		printf("[KO]\n");
 	else if (exit_status == SIGSEGV)
-		status = ft_strdup("SEGV");
+		printf("[SEGV]\n");
 	else if (exit_status == SIGBUS)
-		status = ft_strdup("BUSE");
-	printf("[%s]\n", status);
-	free(status);
+		printf("[BUSE]\n");
 }
 
 // リストのテストたち実行するやつ〜
