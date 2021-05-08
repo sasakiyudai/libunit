@@ -12,7 +12,12 @@ static int	launch_test(int (*func)(void))
 		exit(func());
 	wait(&status);
 	if (WIFEXITED(status))
-		return (WEXITSTATUS(status));
+	{
+		if (WEXITSTATUS(status) == 255)
+			return (-1);
+		else
+			return (WEXITSTATUS(status));
+	}
 	if (WIFSIGNALED(status))
 		return (WTERMSIG(status));
 	return (UNKNOWN);
@@ -28,6 +33,8 @@ static void	print_status(int exit_status)
 		printf("[SEGV]\n");
 	else if (exit_status == SIGBUS)
 		printf("[BUSE]\n");
+	else
+		printf("[?]\n");
 }
 
 static void	ft_putstr(char *s)
