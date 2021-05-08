@@ -2,6 +2,10 @@ NAME = libunit.a
 CC = gcc
 CFLAGS = -Werror -Wall -Wextra -g
 
+LIBFT_PATH = ./../libft
+LIBFT_MAKE = $(MAKE) -C $(LIBFT_PATH)
+LIBFT_LIB = $(LIBFT_PATH)/libft.a
+
 HEADER_FILES = libunit.h
 SRCS = exit_fatal.c launch_tests.c load_test.c
 OBJS = $(SRCS:.c=.o)
