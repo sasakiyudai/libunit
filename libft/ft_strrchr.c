@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtanaka <jtanaka@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/06 02:51:35 by jtanaka           #+#    #+#             */
-/*   Updated: 2020/10/22 17:52:55 by jtanaka          ###   ########.fr       */
+/*   Created: 2020/10/06 04:58:56 by jtanaka           #+#    #+#             */
+/*   Updated: 2020/10/16 01:35:20 by jtanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	ans;
+	char	*str;
+	int		i;
 
-	ans = 0;
-	while (s[ans])
-		ans++;
-	return (ans);
+	str = (char*)s;
+	i = ft_strlen(str);
+	while (i >= 0)
+	{
+		if (str[i] == c)
+			return (str + i);
+		i--;
+	}
+	return (NULL);
 }
