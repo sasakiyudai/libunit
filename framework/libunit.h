@@ -34,6 +34,7 @@ void			exit_fatal(void);
 void			print_green(char *s, int fd);
 void			print_red(char *s, int fd);
 void			print_yellow(char *s, int fd);
+void			print_name(char *name, int fd);
 void			print_status_with_color(int exit_status, int fd);
 void			print_status(int exit_status, int fd);
 void			ft_putstr_fd(char *s, int fd);

@@ -50,19 +50,12 @@ static int	free_ret(t_unit_test **list, int ret)
 	return (ret);
 }
 
-static void	put_name(char *name, int fd)
-{
-	ft_putstr_fd("    > ", fd);
-	ft_putstr_fd(name, fd);
-	ft_putstr_fd(" : ", fd);
-}
-
 static int	exec_and_print_test(t_unit_test *current, int file_fd)
 {
 	int	exit_status;
 
-	put_name(current->name, STDOUT_FILENO);
-	put_name(current->name, file_fd);
+	print_name(current->name, STDOUT_FILENO);
+	print_name(current->name, file_fd);
 	exit_status = launch_test(current->func);
 	print_status_with_color(exit_status, STDOUT_FILENO);
 	print_status(exit_status, file_fd);
