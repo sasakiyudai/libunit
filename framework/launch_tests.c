@@ -9,7 +9,10 @@ static int	launch_test(int (*func)(void))
 	if (pid < 0)
 		exit_fatal();
 	else if (pid == 0)
+	{
+		alarm(TIME_LIMIT);
 		exit(func());
+	}
 	wait(&status);
 	if (WIFEXITED(status))
 	{
@@ -29,10 +32,16 @@ static void	print_status(int exit_status)
 		print_green("[OK]");
 	else if (exit_status == -1)
 		print_yellow("[KO]");
+	else if (exit_status == SIGALRM)
+		print_red("[TIMEOUT]");
 	else if (exit_status == SIGSEGV)
 		print_red("[SEGV]");
 	else if (exit_status == SIGBUS)
 		print_red("[BUSE]");
+	else if (exit_status == SIGABRT)
+		print_red("[ABRT]");
+	else if (exit_status == SIGFPE)
+		print_red("[FPE]");
 	else
 		ft_putstr("[?]\n");
 }
