@@ -1,10 +1,9 @@
 #include "libunit.h"
 
-// 受け取ったテストをリストに追加するやつ〜
-void load_test(t_unit_test **list, char *name, int (*func)(void))
+void	load_test(t_unit_test **list, char *name, int (*func)(void))
 {
-	t_unit_test *new;
-	t_unit_test *tmp;
+	t_unit_test	*new;
+	t_unit_test	*tmp;
 
 	new = malloc(sizeof(t_unit_test));
 	if (new == NULL)

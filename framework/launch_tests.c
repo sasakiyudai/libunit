@@ -39,7 +39,7 @@ static void	print_status(int exit_status)
 
 static void	ft_putstr(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -49,7 +49,7 @@ static void	ft_putstr(char *s)
 
 static int	free_ret(t_unit_test **list, int ret)
 {
-	t_unit_test *tmp;
+	t_unit_test	*tmp;
 
 	while (*list)
 	{
@@ -61,8 +61,7 @@ static int	free_ret(t_unit_test **list, int ret)
 	return (ret);
 }
 
-// リストのテストたち実行するやつ〜
-int			launch_tests(t_unit_test **list)
+int	launch_tests(t_unit_test **list)
 {
 	t_unit_test	*tmp;
 	int			checked;

@@ -2,9 +2,9 @@
 #include <string.h>
 #include "../../libft/libft.h"
 
-int	null_test(void)
+int	real_null_test(void)
 {
-	if (ft_strlen("") == strlen(""))
+	if (ft_strlen(NULL) == strlen(NULL))
 		return (0);
 	else
 		return (-1);

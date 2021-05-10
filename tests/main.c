@@ -1,8 +1,10 @@
 #include "./strlen/basic_tests.h"
 #include <stdio.h>
 
-int main()
+int	main(void)
 {
-	printf("*********************************\n** 42 - Unit Tests ****\n*********************************\n");
+	printf("***********************\n");
+	printf("** 42 - Unit Tests ****\n***********");
+	printf("************\n");
 	strlen_launcher();
 }

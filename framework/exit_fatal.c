@@ -1,8 +1,8 @@
 #include "libunit.h"
 
-static int ft_strlen(const char *s)
+static int	ft_strlen(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -10,11 +10,8 @@ static int ft_strlen(const char *s)
 	return (i);
 }
 
-// malloc失敗したときに呼ばれるやつ〜
-void			exit_fatal(void)
+void	exit_fatal(void)
 {
-	const char *exit_s = "EXIT FATAL\n";
-
-	write(STDERR, exit_s, ft_strlen(exit_s));
+	write(STDERR, "EXIT FATAL\n", ft_strlen("EXIT FATAL\n"));
 	exit(EXIT_FAILURE);
 }
