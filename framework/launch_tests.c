@@ -34,10 +34,10 @@ static void	print_status(int exit_status)
 	else if (exit_status == SIGBUS)
 		print_red("[BUSE]");
 	else
-		printf("[?]\n");
+		ft_putstr("[?]\n");
 }
 
-static void	ft_putstr(char *s)
+void	ft_putstr(char *s)
 {
 	int	i;
 
@@ -83,7 +83,7 @@ int	launch_tests(t_unit_test **list)
 		num_tests++;
 		tmp = tmp->next;
 	}
-	printf("\n%d/%d tests checked\n", checked, num_tests);
+	print_result(checked, num_tests);
 	if (checked == num_tests)
 		return (free_ret(list, 0));
 	else

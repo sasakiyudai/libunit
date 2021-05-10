@@ -1,6 +1,6 @@
 #include "basic_tests.h"
 #include <string.h>
-#include "../../libft/libft.h"
+#include "../../real-tests/libft.h"
 
 int	asuka_test(void)
 {

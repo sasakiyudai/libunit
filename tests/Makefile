@@ -6,7 +6,7 @@
 #    By: syudai <syudai@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/10 04:46:14 by jtanaka           #+#    #+#              #
-#    Updated: 2021/05/10 18:03:54 by syudai           ###   ########.fr        #
+#    Updated: 2021/05/11 00:34:55 by syudai           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FRAMEWORK_PATH = ./../framework
 FRAMEWORK_MAKE = $(MAKE) -C $(FRAMEWORK_PATH)
 FRAMEWORK_LIB = $(FRAMEWORK_PATH)/libunit.a
 
-HEADER_FILES = strlen/basic_tests.h ../framework/libunit.h ../libft/libft.h
+HEADER_FILES = strlen/basic_tests.h ../framework/libunit.h
 SRCS = $(shell find . -name '*.c')
 OBJS = $(SRCS:.c=.o)
 

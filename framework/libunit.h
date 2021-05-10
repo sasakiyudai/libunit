@@ -28,5 +28,7 @@ void			exit_fatal(void);
 void			print_green(char *s);
 void			print_red(char *s);
 void			print_yellow(char *s);
+void			ft_putstr(char *s);
+void			print_result(int checked, int num_tests);
 
 #endif

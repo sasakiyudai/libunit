@@ -1,6 +1,5 @@
 #include "basic_tests.h"
 #include <string.h>
-#include "../../libft/libft.h"
 
 int	basic_test(void)
 {

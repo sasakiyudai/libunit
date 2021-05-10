@@ -3,10 +3,8 @@
 
 int	main(void)
 {
-	setvbuf(stdout, (char *)NULL, _IONBF, 0);
-	printf("***********************\n");
-	printf("** 42 - Unit Tests ****\n");
-	printf("***********************\n");
-	fflush(stdout);
+	ft_putstr_fd("***********************\n", 1);
+	ft_putstr_fd("** 42 - Unit Tests ****\n", 1);
+	ft_putstr_fd("***********************\n", 1);
 	strlen_launcher();
 }
