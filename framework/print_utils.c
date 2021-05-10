@@ -24,13 +24,6 @@ void	print_yellow(char *s, int fd)
 	ft_putstr_fd("\n", fd);
 }
 
-void	print_name(char *name, int fd)
-{
-	ft_putstr_fd("    > ", fd);
-	ft_putstr_fd(name, fd);
-	ft_putstr_fd(" : ", fd);
-}
-
 void	print_status_with_color(int exit_status, int fd)
 {
 	if (exit_status == 0)
