@@ -7,7 +7,7 @@ LIBFT_MAKE = $(MAKE) -C $(LIBFT_PATH)
 LIBFT_LIB = $(LIBFT_PATH)/libft.a
 
 HEADER_FILES = libunit.h
-SRCS = exit_fatal.c launch_tests.c load_test.c
+SRCS = exit_fatal.c launch_tests.c load_test.c bonus_utils.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

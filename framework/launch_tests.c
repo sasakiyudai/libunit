@@ -26,13 +26,13 @@ static int	launch_test(int (*func)(void))
 static void	print_status(int exit_status)
 {
 	if (exit_status == 0)
-		printf("[OK]\n");
+		print_green("[OK]");
 	else if (exit_status == -1)
-		printf("[KO]\n");
+		print_yellow("[KO]");
 	else if (exit_status == SIGSEGV)
-		printf("[SEGV]\n");
+		print_red("[SEGV]");
 	else if (exit_status == SIGBUS)
-		printf("[BUSE]\n");
+		print_red("[BUSE]");
 	else
 		printf("[?]\n");
 }
