@@ -18,7 +18,6 @@ int	middle_str_test(void);
 int	long_str_test(void);
 int	shinji_test(void);
 int	asuka_test(void);
-int	real_null_test(void);
 int	strlen_launcher(void);
 
 #endif

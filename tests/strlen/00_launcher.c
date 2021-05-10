@@ -22,6 +22,5 @@ int	strlen_launcher(void)
 	load_test(&testlist, "Long string test", &long_str_test);
 	load_test(&testlist, "Sjinji test", &shinji_test);
 	load_test(&testlist, "Asuka test", &asuka_test);
-	load_test(&testlist, "Real null test", &real_null_test);
 	return (launch_tests(&testlist));
 }
