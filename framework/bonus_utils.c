@@ -18,19 +18,19 @@ int	itoa_recursive(char *result, int n)
 	return (idx);
 }
 
-void	ft_putnbr_fd(int n)
+static void	ft_putnbr_fd(int n, int fd)
 {
 	char		result[12];
 
 	itoa_recursive(result, n);
-	ft_putstr(result);
+	ft_putstr_fd(result, fd);
 }
 
-void	print_result(int checked, int num_tests)
+void	print_result(int checked, int num_tests, int fd)
 {
-	ft_putstr("\n");
-	ft_putnbr_fd(checked);
-	ft_putstr("/");
-	ft_putnbr_fd(num_tests);
-	ft_putstr(" tests checked\n");
+	ft_putstr_fd("\n", fd);
+	ft_putnbr_fd(checked, fd);
+	ft_putstr_fd("/", fd);
+	ft_putnbr_fd(num_tests, fd);
+	ft_putstr_fd(" tests checked\n", fd);
 }

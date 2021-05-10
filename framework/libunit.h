@@ -17,6 +17,9 @@
 # include <unistd.h>
 # include <sys/wait.h>
 # include <signal.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
 typedef struct s_unit_list
 {
@@ -28,10 +31,10 @@ typedef struct s_unit_list
 void			load_test(t_unit_test **list, char *name, int (*func)(void));
 int				launch_tests(t_unit_test **list);
 void			exit_fatal(void);
-void			print_green(char *s);
-void			print_red(char *s);
-void			print_yellow(char *s);
-void			ft_putstr(char *s);
-void			print_result(int checked, int num_tests);
+void			print_green(char *s, int fd);
+void			print_red(char *s, int fd);
+void			print_yellow(char *s, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			print_result(int checked, int num_tests, int fd);
 
 #endif

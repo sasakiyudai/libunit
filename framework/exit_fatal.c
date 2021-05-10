@@ -1,27 +1,27 @@
 #include "libunit.h"
 
-void	print_green(char *s)
+void	print_green(char *s, int fd)
 {
-	ft_putstr(GREEN);
-	ft_putstr(s);
-	ft_putstr(DEFAULT);
-	ft_putstr("\n");
+	ft_putstr_fd(GREEN, fd);
+	ft_putstr_fd(s, fd);
+	ft_putstr_fd(DEFAULT, fd);
+	ft_putstr_fd("\n", fd);
 }
 
-void	print_red(char *s)
+void	print_red(char *s, int fd)
 {
-	ft_putstr(RED);
-	ft_putstr(s);
-	ft_putstr(DEFAULT);
-	ft_putstr("\n");
+	ft_putstr_fd(RED, fd);
+	ft_putstr_fd(s, fd);
+	ft_putstr_fd(DEFAULT, fd);
+	ft_putstr_fd("\n", fd);
 }
 
-void	print_yellow(char *s)
+void	print_yellow(char *s, int fd)
 {
-	ft_putstr(YELLOW);
-	ft_putstr(s);
-	ft_putstr(DEFAULT);
-	ft_putstr("\n");
+	ft_putstr_fd(YELLOW, fd);
+	ft_putstr_fd(s, fd);
+	ft_putstr_fd(DEFAULT, fd);
+	ft_putstr_fd("\n", fd);
 }
 
 static int	ft_strlen(const char *s)
