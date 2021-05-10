@@ -6,7 +6,7 @@ int	strlen_launcher(void)
 	t_unit_test	*testlist;
 
 	testlist = NULL;
-	puts("STRLEN:");
+	ft_putendl_fd("STRLEN:\n", STDOUT_FILENO);
 	load_test(&testlist, "Basic test", &basic_test);
 	load_test(&testlist, "NULL test", &null_test);
 	load_test(&testlist, "Bigger string test", &bigger_str_test);
