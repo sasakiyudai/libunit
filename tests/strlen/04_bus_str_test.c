@@ -1,6 +1,5 @@
 #include "basic_tests.h"
 #include <string.h>
-#include "../../libft/libft.h"
 
 int	bus_str_test(void)
 {

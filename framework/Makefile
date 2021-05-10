@@ -2,7 +2,7 @@ NAME = libunit.a
 CC = gcc
 CFLAGS = -Werror -Wall -Wextra -g
 
-LIBFT_PATH = ./../libft
+LIBFT_PATH = ./../real-tests
 LIBFT_MAKE = $(MAKE) -C $(LIBFT_PATH)
 LIBFT_LIB = $(LIBFT_PATH)/libft.a
 
