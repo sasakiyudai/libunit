@@ -3,3 +3,4 @@
 *.o
 libunit.a
 /tests/tests
+result.log
