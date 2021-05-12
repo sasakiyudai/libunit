@@ -69,7 +69,7 @@ int	launch_tests(t_unit_test **list)
 	int			num_tests;
 	int			fd;
 
-	fd = open("result.log", O_WRONLY | O_CREAT, S_IRUSR | S_IRGRP);
+	fd = open("result.log", O_WRONLY | O_APPEND | O_CREAT, 0777);
 	tmp = *list;
 	checked = 0;
 	num_tests = 0;

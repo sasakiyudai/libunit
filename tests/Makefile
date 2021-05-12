@@ -6,7 +6,7 @@
 #    By: syudai <syudai@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/10 04:46:14 by jtanaka           #+#    #+#              #
-#    Updated: 2021/05/12 22:47:48 by syudai           ###   ########.fr        #
+#    Updated: 2021/05/13 00:27:44 by syudai           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,11 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-test: all
+test: $(NAME)
+	./tests
 
-$(NAME): ${HEADER_FILES} ${OBJS}
+$(NAME): ${HEADER_FILES} ${OBJS} 
+	rm -f result.log
 	${FRAMEWORK_MAKE}
 	cp ${FRAMEWORK_LIB} ./
 	${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${FRAMEWORK_LIB}
