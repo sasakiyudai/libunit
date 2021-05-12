@@ -6,7 +6,7 @@
 /*   By: syudai <syudai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 02:58:56 by jtanaka           #+#    #+#             */
-/*   Updated: 2021/05/12 23:28:10 by syudai           ###   ########.fr       */
+/*   Updated: 2021/05/12 23:35:23 by syudai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,7 @@ static void	justin_bieber(const char *nptr, char *buse)
 			sleep(3);
 	}
 	else if (nptr[0] == '3')
-	{
-		k = malloc(1);
-		free(k);
-		free(k);
-	}
+		raise(SIGABRT);
 }
 
 int	ft_atoi(const char *nptr)
