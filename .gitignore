@@ -4,3 +4,4 @@
 libunit.a
 /tests/tests
 result.log
+*.dSYM

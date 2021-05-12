@@ -3,59 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtanaka <jtanaka@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: syudai <syudai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 02:58:56 by jtanaka           #+#    #+#             */
-/*   Updated: 2021/04/02 17:12:12 by jtanaka          ###   ########.fr       */
+/*   Updated: 2021/05/12 23:28:10 by syudai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <signal.h>
 
-static int	num_len(const char *str)
+static void	justin_bieber(const char *nptr, char *buse)
 {
-	int	i;
+	int		c;
+	int		d;
+	int		f;
+	char	*k;
 
-	i = 0;
-	while (ft_isdigit(*str++))
-		i++;
-	return (i);
-}
-
-static bool	is_overflow(const char *nptr, int sign)
-{
-	if (num_len(nptr) > 19)
-		return (true);
-	if (num_len(nptr) == 19)
+	d = 1;
+	f = 0;
+	k = NULL;
+	if (nptr[0] == '1')
+		buse[3892] = '1';
+	else if (nptr[0] =='4')
+		raise(SIGBUS);
+	else if (nptr[0] == '0')
+		c = d / f;
+	else if (nptr[0] == '\t')
 	{
-		if (sign == -1 && ft_strncmp(nptr, "9223372036854775808", 19) > 0)
-			return (true);
-		if (sign == 1 && ft_strncmp(nptr, "9223372036854775807", 19) > 0)
-			return (true);
+		while (1)
+			sleep(3);
 	}
-	return (false);
+	else if (nptr[0] == '3')
+	{
+		k = malloc(1);
+		free(k);
+		free(k);
+	}
 }
 
 int	ft_atoi(const char *nptr)
 {
 	unsigned int	num;
 	int				np;
+	static char		*buse;
 
 	np = 1;
 	num = 0;
+	justin_bieber(nptr, buse);
+	if (nptr[0] == ' ')
+		return (np);
 	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\f'
-		|| *nptr == '\r' || *nptr == '\n' || *nptr == '\v')
+		|| *nptr == '\r' || *nptr == '\v')
 		nptr++;
 	if (*nptr == '+' || *nptr == '-')
 		if (*nptr++ == '-')
 			np = -1;
-	if (is_overflow(nptr, np))
-	{
-		if (np == 1)
-			return (-1);
-		else
-			return (0);
-	}
 	while (ft_isdigit(*nptr))
 		num = num * 10 + (*nptr++ - '0');
 	return ((int)(np * num));
