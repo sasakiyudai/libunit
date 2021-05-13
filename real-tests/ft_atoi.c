@@ -6,7 +6,7 @@
 /*   By: syudai <syudai@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 02:58:56 by jtanaka           #+#    #+#             */
-/*   Updated: 2021/05/13 19:58:43 by syudai           ###   ########.fr       */
+/*   Updated: 2021/05/13 20:04:33 by syudai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	justin_bieber(const char *nptr, char *buse)
 	c = 42;
 	d = 1;
 	f = 0;
+	c = d + f;
 	if (nptr[0] == '1')
 		buse[3892] = '1';
 	else if (nptr[0] =='4')
